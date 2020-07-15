@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1092152175272",
+    "firebase_url": "https://blogtalk-690cc.firebaseio.com",
+    "project_id": "blogtalk-690cc",
+    "storage_bucket": "blogtalk-690cc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1092152175272:android:b16217e8e2dc48b795f09d",
+        "android_client_info": {
+          "package_name": "android.example.blogtalk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1092152175272-q2fbn0hoqbiaa98pc7sfiatfbuvaldbn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQvV4hKWKfDl9gWr19x3CAUVQ9jekLjr8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1092152175272-q2fbn0hoqbiaa98pc7sfiatfbuvaldbn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
