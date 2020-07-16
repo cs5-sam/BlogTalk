@@ -112,5 +112,12 @@
             android:layout_below="@+id/post_description_detail"
             android:layout_toRightOf="@+id/post_comment_edit_text"/>
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_comment"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/post_comment_edit_text"/>
+
     </RelativeLayout>
 </androidx.core.widget.NestedScrollView>

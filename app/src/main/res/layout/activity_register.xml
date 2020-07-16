@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activities.RegisterActivity"
-    android:background="#ffffff">
+    android:background="@color/colorPrimaryDark">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -18,12 +18,22 @@
             android:src="@drawable/userphoto"
             android:layout_marginTop="50dp"
             android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/choose_image_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Choose Image"
+            android:textColor="#ffffff"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/register_user_image"/>
+
         <EditText
             android:id="@+id/register_name_edit_text"
             android:layout_width="265dp"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_below="@+id/register_user_image"
+            android:layout_below="@+id/choose_image_text"
             android:layout_marginTop="40dp"
             android:inputType="textPersonName"
             android:background="@drawable/reg_edittext_style"
@@ -65,14 +75,14 @@
         <Button
             android:id="@+id/register_btn"
             android:layout_width="160dp"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_below="@+id/register_confirm_password_edit_text"
             android:text="Register"
             android:textAllCaps="false"
-            android:background="@drawable/reg_btn_style"
+            android:background="@drawable/login"
             android:textColor="#ffffff"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"/>
+            android:layout_marginTop="40dp"/>
 
         <ProgressBar
             android:id="@+id/register_progressBar"
@@ -80,7 +90,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/register_confirm_password_edit_text"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/circle_bg"
             android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/login_here_text"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:text="Already registered ? Login here"
+            android:gravity="center"
+            android:textColor="#00C853"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/register_btn"
+            android:layout_marginTop="30dp"/>
     </RelativeLayout>
 </ScrollView>

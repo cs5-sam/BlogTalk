@@ -51,7 +51,7 @@
         android:layout_height="56dp"
         android:layout_marginTop="200dp"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/ic_create_black_24dp"
+        android:src="@drawable/ic_create_24dp"
         android:layout_below="@+id/popup_description_edit_text"/>
 
     <ProgressBar

@@ -44,8 +44,13 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
 
         holder.tvTitle.setText(mData.get(position).getTitle());
         Glide.with(mContext).load(mData.get(position).getPictures()).into(holder.imgPost);
-        Glide.with(mContext).load(mData.get(position).getUserImage()).into(holder.imgPostProfile);
 
+        String userImage = mData.get(position).getUserImage();
+        if(userImage != null){
+            Glide.with(mContext).load(userImage).into(holder.imgPostProfile);
+        }else {
+            Glide.with(mContext).load(R.drawable.userphoto).into(holder.imgPostProfile);
+        }
     }
 
     @Override

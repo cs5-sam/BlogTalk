@@ -1,23 +1,40 @@
 package android.example.blogtalk.Activities;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.example.blogtalk.Adapter.CommentAdapter;
+import android.example.blogtalk.Models.Comment;
 import android.example.blogtalk.R;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -33,6 +50,12 @@ public class PostDetailActivity extends AppCompatActivity {
 
     FirebaseAuth auth;
     FirebaseUser user;
+    FirebaseDatabase firebaseDatabase;
+
+    RecyclerView RvComment;
+    CommentAdapter commentAdapter;
+    List<Comment> listComment;
+    static  String COMMENT_KEY = "Comment";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +67,7 @@ public class PostDetailActivity extends AppCompatActivity {
         window.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         getSupportActionBar().hide();
 
+        RvComment = findViewById(R.id.rv_comment);
         postImage = findViewById(R.id.post_detail_image);
         commentImage = findViewById(R.id.post_comment_image);
         postUserImage = findViewById(R.id.post_user_image_detail);
@@ -57,6 +81,35 @@ public class PostDetailActivity extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
+        firebaseDatabase = FirebaseDatabase.getInstance();
+
+        // add Comment button click listener
+        addCommentBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                addCommentBtn.setVisibility(View.INVISIBLE);
+                DatabaseReference commentReference = firebaseDatabase.getReference(COMMENT_KEY).child(PostKey).push();
+                String comment_content = commentEdit.getText().toString();
+                String uid = user.getUid();
+                String uname = user.getDisplayName();
+                String uimg = user.getPhotoUrl().toString();
+                Comment comment = new Comment(comment_content,uid,uimg,uname);
+                commentReference.setValue(comment).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        showMessage("comment added");
+                        commentEdit.setText("");
+                        addCommentBtn.setVisibility(View.VISIBLE);
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        showMessage("Error occurred "+e.getMessage());
+                    }
+                });
+            }
+        });
 
         // displaying image
         String postImagetext = getIntent().getExtras().getString("postImage");
@@ -69,15 +122,59 @@ public class PostDetailActivity extends AppCompatActivity {
         textPostDesc.setText(postDesc);
         // displaying userImage
         String userPostImage = getIntent().getExtras().getString("userPhoto");
-        Glide.with(this).load(userPostImage).into(postUserImage);
+
+        if(userPostImage != null){
+            Glide.with(this).load(userPostImage).into(postUserImage);
+        }
+        else{
+            Glide.with(this).load(R.drawable.userphoto).into(postUserImage);
+        }
+
         // displaying comment user image
-        Glide.with(this).load(user.getPhotoUrl()).into(commentImage);
+
+        if(user.getPhotoUrl() != null){
+            Glide.with(this).load(user.getPhotoUrl()).into(commentImage);
+        }
+        else{
+            Glide.with(this).load(R.drawable.userphoto).into(commentImage);
+        }
 
         // ID
         PostKey = getIntent().getExtras().getString("postKey");
         //String date = timeStampStringConvert(getIntent().getExtras().getLong("postDate"));
         //textPostDate.setText(date);
 
+        // Initialize RecyclerView
+        iniRvComment();
+
+    }
+
+    private void iniRvComment() {
+
+        RvComment.setLayoutManager(new LinearLayoutManager(this));
+
+        DatabaseReference commentRef = firebaseDatabase.getReference(COMMENT_KEY).child(PostKey);
+        commentRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                listComment = new ArrayList<>();
+                for(DataSnapshot snapshot1:snapshot.getChildren()){
+                    Comment comment = snapshot1.getValue(Comment.class);
+                    listComment.add(comment);
+                }
+                commentAdapter = new CommentAdapter(getApplicationContext(),listComment);
+                RvComment.setAdapter(commentAdapter);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    private void showMessage(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
     /*private String timeStampStringConvert(long time){
@@ -85,5 +182,6 @@ public class PostDetailActivity extends AppCompatActivity {
         calendar.setTimeInMillis(time);
         String date = DateFormat.format("yyyy-MM-dd",calendar).toString();
         return  date;
-    }*/
+       }
+        */
 }

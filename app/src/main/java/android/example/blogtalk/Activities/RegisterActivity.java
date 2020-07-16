@@ -18,6 +18,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -43,6 +44,7 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText userEmail, userPassword,userConfirmPassword, userName;
     private ProgressBar loadingBar;
     private Button registerBtn;
+    private TextView loginTextActivity;
 
     private FirebaseAuth auth;
 
@@ -60,6 +62,7 @@ public class RegisterActivity extends AppCompatActivity {
         userName = findViewById(R.id.register_name_edit_text);
         loadingBar = findViewById(R.id.register_progressBar);
         registerBtn = findViewById(R.id.register_btn);
+        loginTextActivity = findViewById(R.id.login_here_text);
 
         auth = FirebaseAuth.getInstance();
 
@@ -74,6 +77,15 @@ public class RegisterActivity extends AppCompatActivity {
                     openGallery();
                 }
 
+            }
+        });
+
+        loginTextActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(RegisterActivity.this,LoginActivity.class);
+                startActivity(i);
+                finish();
             }
         });
 
@@ -112,7 +124,12 @@ public class RegisterActivity extends AppCompatActivity {
                             // user account created
                             showMessage("Account created successfully!");
                             // after account created we update information i.e name, picture
-                            updateUserInfo(name,pickedImageUri,auth.getCurrentUser());
+                            if(pickedImageUri != null){
+                                updateUserInfo(name,pickedImageUri,auth.getCurrentUser());
+                            }
+                            else{
+                                updateUserInfoWithoutImage(name,auth.getCurrentUser());
+                            }
                         }
                         else{
                             showMessage("Error occured! " + task.getException().getMessage());
@@ -156,6 +173,27 @@ public class RegisterActivity extends AppCompatActivity {
                 });
             }
         });
+    }
+
+    private void updateUserInfoWithoutImage(final String name,final FirebaseUser currentUser) {
+
+        //upload user image to firebase storage and get url
+
+                        UserProfileChangeRequest profileUpdate = new UserProfileChangeRequest.Builder()
+                                .setDisplayName(name)
+                                .build();
+
+                        currentUser.updateProfile(profileUpdate)
+                                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        if(task.isSuccessful()){
+                                            // user info updated
+                                            showMessage("Registration Complete");
+                                            updateUri();
+                                        }
+                                    }
+                                });
     }
 
     private void updateUri() {
