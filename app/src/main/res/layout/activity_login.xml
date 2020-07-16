@@ -12,8 +12,8 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:layout_width="200dp"
-            android:layout_height="100dp"
+            android:layout_width="300dp"
+            android:layout_height="150dp"
             android:id="@+id/login_user_image"
             android:src="@drawable/title"
             android:layout_marginTop="50dp"
@@ -25,7 +25,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_below="@+id/login_user_image"
-            android:layout_marginTop="110dp"
+            android:layout_marginTop="100dp"
             android:inputType="textEmailAddress"
             android:background="@drawable/reg_edittext_style"
             android:hint="Enter email"/>

@@ -34,7 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/choose_image_text"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:inputType="textPersonName"
         android:background="@drawable/reg_edittext_style"
         android:hint="Enter name"/>
@@ -103,6 +103,6 @@
             android:textColor="#00C853"
             android:layout_centerHorizontal="true"
             android:layout_below="@+id/register_btn"
-            android:layout_marginTop="30dp"/>
+            android:layout_marginTop="15dp"/>
     </RelativeLayout>
 </ScrollView>
