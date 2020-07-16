@@ -5,8 +5,6 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.example.blogtalk.Fragments.HomeFragment;
-import android.example.blogtalk.Fragments.ProfileFragment;
-import android.example.blogtalk.Fragments.SettingsFragment;
 import android.example.blogtalk.Models.Post;
 import android.example.blogtalk.R;
 import android.graphics.Color;
@@ -250,12 +248,12 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         }
     }
 
-    @Override
+    /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.home, menu);
         return true;
-    }
+    }*/
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
@@ -275,13 +273,10 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
             getSupportActionBar().setTitle("Home");
             getSupportFragmentManager().beginTransaction().replace(R.id.container,new HomeFragment()).commit();
         }
-        else if (id == R.id.nav_profile) {
-            getSupportActionBar().setTitle("Profile");
-            getSupportFragmentManager().beginTransaction().replace(R.id.container,new ProfileFragment()).commit();
-        }
         else if (id == R.id.nav_settings) {
             getSupportActionBar().setTitle("Settings");
-            getSupportFragmentManager().beginTransaction().replace(R.id.container,new SettingsFragment()).commit();
+            Intent i = new Intent(Home.this,SettingsActivity.class);
+            startActivity(i);
         }
         else if (id == R.id.nav_logout) {
             FirebaseAuth.getInstance().signOut();

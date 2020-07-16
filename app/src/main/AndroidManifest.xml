@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/blogger"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activities.PostDetailActivity"></activity>
+        <activity android:name=".Activities.SettingsActivity"></activity>
+        <activity android:name=".Activities.PostDetailActivity" />
         <activity
             android:name=".Activities.Home"
             android:label="@string/title_activity_home"

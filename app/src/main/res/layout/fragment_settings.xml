@@ -1,13 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.SettingsFragment">
+    android:background="@color/colorPrimaryDark">
 
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Settings Fragment" />
+        android:layout_height="match_parent">
 
-</FrameLayout>
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:id="@+id/settings_user_image"
+            android:src="@drawable/userphoto"
+            android:layout_marginTop="50dp"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/settings_choose_image_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Choose Image"
+            android:textColor="#ffffff"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/settings_user_image"/>
+
+        <EditText
+            android:id="@+id/settings_name_edit_text"
+            android:layout_width="265dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/settings_choose_image_text"
+            android:layout_marginTop="40dp"
+            android:inputType="textPersonName"
+            android:background="@drawable/reg_edittext_style"
+            android:hint="Enter name"/>
+
+        <Button
+            android:id="@+id/change_settings_btn"
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/settings_name_edit_text"
+            android:text="Register"
+            android:textAllCaps="false"
+            android:background="@drawable/login"
+            android:textColor="#ffffff"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"/>
+
+        <ProgressBar
+            android:id="@+id/settings_progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/settings_name_edit_text"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/circle_bg"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+</ScrollView>
