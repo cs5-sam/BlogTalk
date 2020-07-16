@@ -100,10 +100,10 @@ public class RegisterActivity extends AppCompatActivity {
                 final String confirmPassword = userConfirmPassword.getText().toString();
                 final String name = userName.getText().toString();
 
-                if(email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty() || name.isEmpty() || !password.equals(confirmPassword)){
+                if(email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty() || name.isEmpty() || !password.equals(confirmPassword) || pickedImageUri == null){
 
                     // fields empty or incorrect;
-                    showMessage("Please verify all fields");
+                    showMessage("Please verify all fields, if not, add image");
                     registerBtn.setVisibility(View.VISIBLE);
                     loadingBar.setVisibility(View.INVISIBLE);
                 }
@@ -128,7 +128,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 updateUserInfo(name,pickedImageUri,auth.getCurrentUser());
                             }
                             else{
-                                updateUserInfoWithoutImage(name,auth.getCurrentUser());
+                                Toast.makeText(RegisterActivity.this, "Add image", Toast.LENGTH_SHORT).show();
                             }
                         }
                         else{
