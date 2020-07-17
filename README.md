@@ -9,11 +9,11 @@ Using Android Studio and Firebase.
   <li>Main news feed which displays all the posts posted by all the users</li>
   <li>Comment feature for all posts.</li>
   <li>Image and name changing feature.</li>
+  <li>Delete Account</li>
 </ul>
 
 # To be Implemented
 <ul>
   <li>Delete posts</li>
-  <li>Delete Account</li>
 </ul>
 
