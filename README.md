@@ -12,6 +12,10 @@ Using Android Studio and Firebase.
   <li>Delete Account</li>
 </ul>
 
+# Screenshots
+
+<img src="https://drive.google.com/file/d/1duLwOnSX2wLbrNgg-w2_Kxrg_9NELPJY/view?usp=sharing" alt="login screen">
+
 # To be Implemented
 <ul>
   <li>Delete posts</li>
