@@ -25,6 +25,8 @@ import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthCredential;
+import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
@@ -43,12 +45,14 @@ public class SettingsActivity extends AppCompatActivity {
     private CircleImageView userNewImage;
     private ProgressBar loadingBar;
 
+
     static int PReqCode = 3;
     static int REQUESTCODE = 3;
     Uri pickedImageUri;
 
     FirebaseAuth auth;
     FirebaseUser user;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,8 +61,10 @@ public class SettingsActivity extends AppCompatActivity {
 
         userNewImage = findViewById(R.id.settings_user_image);
         userNewName = findViewById(R.id.settings_name_edit_text);
+
         changeBtn = findViewById(R.id.settings_change_btn);
         loadingBar = findViewById(R.id.settings_progressBar);
+
 
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
@@ -93,6 +99,9 @@ public class SettingsActivity extends AppCompatActivity {
 
                 if (pickedImageUri == null) {
                     showMessage("Please choose an image");
+                    loadingBar.setVisibility(View.INVISIBLE);
+                    changeBtn.setVisibility(View.VISIBLE);
+
                 }
                 else if(name.equals("")){
                     name = user.getDisplayName();
@@ -104,6 +113,7 @@ public class SettingsActivity extends AppCompatActivity {
             }
         });
     }
+
 
     private void uploadData(final String name){
         StorageReference storageReference = FirebaseStorage.getInstance().getReference().child("users_photos");

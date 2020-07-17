@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".Activities.DeleteAccountActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/delete_account_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delete Account"
+            android:textColor="#00C853"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"/>
+
+        <EditText
+            android:id="@+id/delete_email_edit_text"
+            android:layout_width="265dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/delete_account_text"
+            android:layout_marginTop="20dp"
+            android:inputType="textEmailAddress"
+            android:background="@drawable/reg_edittext_style"
+            android:hint="Enter email"/>
+
+        <EditText
+            android:id="@+id/delete_password_edit_text"
+            android:layout_width="265dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/delete_email_edit_text"
+            android:layout_marginTop="20dp"
+            android:inputType="textPassword"
+            android:background="@drawable/reg_edittext_style"
+            android:hint="Enter password"/>
+
+        <Button
+            android:id="@+id/delete_account_btn"
+            android:layout_width="300dp"
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content"
+            android:background="@drawable/warning_btn_design"
+            android:text="Delete Account"
+            android:textColor="#ffffff"
+            android:layout_below="@+id/delete_password_edit_text"
+            android:layout_marginTop="40dp"/>
+        <ProgressBar
+            android:id="@+id/delete_progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_below="@+id/delete_password_edit_text"
+            android:background="@drawable/circle_bg"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+
+</ScrollView>

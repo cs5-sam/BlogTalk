@@ -278,6 +278,11 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
             Intent i = new Intent(Home.this,SettingsActivity.class);
             startActivity(i);
         }
+        else if (id == R.id.nav_delete) {
+            getSupportActionBar().setTitle("Delete");
+            Intent i = new Intent(Home.this,DeleteAccountActivity.class);
+            startActivity(i);
+        }
         else if (id == R.id.nav_logout) {
             FirebaseAuth.getInstance().signOut();
             Intent loginIntent = new Intent(Home.this,LoginActivity.class);

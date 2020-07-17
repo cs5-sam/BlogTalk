@@ -71,6 +71,7 @@
             android:layout_centerHorizontal="true"/>
 
         <TextView
+            android:id="@+id/notice_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="*Choosing image is compulsory"
@@ -80,5 +81,6 @@
             android:textColor="#ffffff"
             android:textStyle="bold"
             android:textSize="17sp"/>
+
     </RelativeLayout>
 </ScrollView>
