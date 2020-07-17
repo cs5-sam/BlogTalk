@@ -14,7 +14,7 @@ Using Android Studio and Firebase.
 
 # Screenshots
 
-<img src="https://drive.google.com/file/d/1duLwOnSX2wLbrNgg-w2_Kxrg_9NELPJY/view?usp=sharing" alt="login screen">
+![foxdemo](https://drive.google.com/file/d/1duLwOnSX2wLbrNgg-w2_Kxrg_9NELPJY/view?usp=sharing)
 
 # To be Implemented
 <ul>
