@@ -10,3 +10,10 @@ Using Android Studio and Firebase.
   <li>Comment feature for all posts.</li>
   <li>Image and name changing feature.</li>
 </ul>
+
+# To be Implemented
+<ul>
+  <li>Delete posts</li>
+  <li>Delete Account</li>
+</ul>
+
