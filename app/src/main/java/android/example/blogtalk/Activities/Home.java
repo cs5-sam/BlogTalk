@@ -5,12 +5,14 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.example.blogtalk.Fragments.HomeFragment;
+import android.example.blogtalk.Fragments.MyPostFragment;
 import android.example.blogtalk.Models.Post;
 import android.example.blogtalk.R;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
@@ -217,6 +219,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     private void addPost(Post post) {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("Posts").push();
+        DatabaseReference sepRef = database.getReference("Separate").child(currentUser.getUid()).push();
 
         // post unique ID and update post
         String key = myRef.getKey();
@@ -230,6 +233,12 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
                 popupLoadingBar.setVisibility(View.INVISIBLE);
                 popupAddBtn.setVisibility(View.VISIBLE);
                 popAddPost.dismiss();
+            }
+        });
+        sepRef.setValue(post).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                Log.i("done","done");
             }
         });
     }
@@ -272,6 +281,10 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         if (id == R.id.nav_home) {
             getSupportActionBar().setTitle("Home");
             getSupportFragmentManager().beginTransaction().replace(R.id.container,new HomeFragment()).commit();
+        }
+        if (id == R.id.nav_mypost) {
+            getSupportActionBar().setTitle("My post");
+            getSupportFragmentManager().beginTransaction().replace(R.id.container,new MyPostFragment()).commit();
         }
         else if (id == R.id.nav_settings) {
             getSupportActionBar().setTitle("Settings");
