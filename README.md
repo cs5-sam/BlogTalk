@@ -9,7 +9,7 @@ Using Android Studio and Firebase.
   <li>Main news feed which displays all the posts posted by all the users</li>
   <li>Separate feed for viewing your posts</li>
   <li>Comment feature for all posts.</li>
-  <li>Public chat feature, chat everyone</li>
+  <li>Public chat feature, now chat everyone</li>
   <li>Image and name changing feature.</li>
   <li>Delete Account</li>
 </ul>
