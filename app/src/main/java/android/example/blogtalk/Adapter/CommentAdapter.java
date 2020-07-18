@@ -19,6 +19,8 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentViewHolder> {
 
     private Context mContext;
@@ -51,7 +53,7 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentV
 
     public class CommentViewHolder extends RecyclerView.ViewHolder{
 
-        ImageView image_user;
+        CircleImageView image_user;
         TextView tv_name,tv_content,tv_date;
 
         public CommentViewHolder(@NonNull View itemView) {

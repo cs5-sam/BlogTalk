@@ -286,6 +286,10 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
             getSupportActionBar().setTitle("My post");
             getSupportFragmentManager().beginTransaction().replace(R.id.container,new MyPostFragment()).commit();
         }
+        else if (id == R.id.nav_publicchat) {
+            Intent i = new Intent(Home.this,PublicChatActivity.class);
+            startActivity(i);
+        }
         else if (id == R.id.nav_settings) {
             getSupportActionBar().setTitle("Settings");
             Intent i = new Intent(Home.this,SettingsActivity.class);

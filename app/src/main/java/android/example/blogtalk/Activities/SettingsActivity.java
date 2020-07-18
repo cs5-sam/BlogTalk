@@ -41,7 +41,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class SettingsActivity extends AppCompatActivity {
 
     private EditText userNewName;
-    private Button changeBtn;
+    private Button changeBtn,deleteAccountBtn;
     private CircleImageView userNewImage;
     private ProgressBar loadingBar;
 

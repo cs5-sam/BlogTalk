@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Activities.PublicChatActivity"></activity>
         <activity android:name=".Activities.DeleteAccountActivity" />
         <activity android:name=".Activities.SettingsActivity" />
         <activity android:name=".Activities.PostDetailActivity" />
