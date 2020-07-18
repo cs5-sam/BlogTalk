@@ -16,7 +16,7 @@
             android:layout_height="130dp"
             android:id="@+id/register_user_image"
             android:src="@drawable/userphoto"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="30dp"
             android:layout_centerHorizontal="true"/>
 
         <TextView
@@ -37,7 +37,9 @@
         android:layout_marginTop="30dp"
         android:inputType="textPersonName"
         android:background="@drawable/reg_edittext_style"
-        android:hint="Enter name"/>
+        android:hint="Enter name"
+            android:drawableLeft="@drawable/ic_account_circle_black_24dp"
+            />
 
         <EditText
             android:background="@drawable/reg_edittext_style"
@@ -48,6 +50,7 @@
             android:layout_below="@+id/register_name_edit_text"
             android:layout_marginTop="30dp"
             android:hint="Enter email"
+            android:drawableLeft="@drawable/ic_email_black_24dp"
             android:inputType="textEmailAddress"/>
 
         <EditText
@@ -59,6 +62,7 @@
             android:layout_below="@+id/register_email_edit_text"
             android:layout_marginTop="30dp"
             android:hint="Enter password"
+            android:drawableLeft="@drawable/ic_lock_outline_black_24dp"
             android:inputType="textPassword"/>
 
         <EditText
@@ -69,6 +73,7 @@
             android:layout_centerHorizontal="true"
             android:layout_below="@+id/register_password_edit_text"
             android:layout_marginTop="30dp"
+            android:drawableLeft="@drawable/ic_lock_outline_black_24dp"
             android:hint="confirm password"
             android:inputType="textPassword"/>
 

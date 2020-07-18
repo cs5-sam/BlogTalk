@@ -29,6 +29,7 @@
             android:layout_below="@+id/delete_account_text"
             android:layout_marginTop="20dp"
             android:inputType="textEmailAddress"
+            android:drawableLeft="@drawable/ic_email_black_24dp"
             android:background="@drawable/reg_edittext_style"
             android:hint="Enter email"/>
 
@@ -40,8 +41,21 @@
             android:layout_below="@+id/delete_email_edit_text"
             android:layout_marginTop="20dp"
             android:inputType="textPassword"
+            android:drawableLeft="@drawable/ic_lock_outline_black_24dp"
             android:background="@drawable/reg_edittext_style"
             android:hint="Enter password"/>
+
+        <EditText
+            android:id="@+id/delete_confirm_password_edit_text"
+            android:layout_width="265dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/delete_password_edit_text"
+            android:layout_marginTop="20dp"
+            android:inputType="textPassword"
+            android:drawableLeft="@drawable/ic_lock_outline_black_24dp"
+            android:background="@drawable/reg_edittext_style"
+            android:hint="Confirm password"/>
 
         <Button
             android:id="@+id/delete_account_btn"
@@ -51,7 +65,7 @@
             android:background="@drawable/warning_btn_design"
             android:text="Delete Account"
             android:textColor="#ffffff"
-            android:layout_below="@+id/delete_password_edit_text"
+            android:layout_below="@+id/delete_confirm_password_edit_text"
             android:layout_marginTop="40dp"/>
         <ProgressBar
             android:id="@+id/delete_progressBar"
@@ -59,7 +73,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            android:layout_below="@+id/delete_password_edit_text"
+            android:layout_below="@+id/delete_confirm_password_edit_text"
             android:background="@drawable/circle_bg"
             android:layout_centerHorizontal="true"/>
 

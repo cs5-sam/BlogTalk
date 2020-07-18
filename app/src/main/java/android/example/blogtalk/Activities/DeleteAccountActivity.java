@@ -22,11 +22,11 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class DeleteAccountActivity extends AppCompatActivity {
 
-    private EditText userEmail,userPassword;
+    private EditText userEmail,userPassword,userConfirmPassword;
     private Button deleteBtn;
     private ProgressBar loadingBar;
 
-    private String password,email;
+    private String password,email,confirmPassword;
 
     FirebaseAuth auth;
     FirebaseUser user;
@@ -40,6 +40,7 @@ public class DeleteAccountActivity extends AppCompatActivity {
         userEmail = findViewById(R.id.delete_email_edit_text);
         deleteBtn = findViewById(R.id.delete_account_btn);
         loadingBar = findViewById(R.id.delete_progressBar);
+        userConfirmPassword = findViewById(R.id.delete_confirm_password_edit_text);
 
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
@@ -47,11 +48,18 @@ public class DeleteAccountActivity extends AppCompatActivity {
         deleteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                confirmPassword = userConfirmPassword.getText().toString();
                 password = userPassword.getText().toString();
                 email = userEmail.getText().toString();
-                if(email.equals("") || password.equals("")){
+
+                if(email.equals("") || password.equals("") || confirmPassword.equals("")){
                     showMessage("Please fill each field");
-                }else{
+                }
+                else if(!email.equals(user.getEmail()) || !password.equals(confirmPassword)){
+                    showMessage("Invalid Credentials");
+                }
+                else{
                     loadingBar.setVisibility(View.VISIBLE);
                     deleteBtn.setVisibility(View.INVISIBLE);
                     deleteAccount();

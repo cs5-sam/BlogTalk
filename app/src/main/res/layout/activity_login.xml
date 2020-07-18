@@ -25,9 +25,10 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_below="@+id/login_user_image"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="60dp"
             android:inputType="textEmailAddress"
             android:background="@drawable/reg_edittext_style"
+            android:drawableLeft="@drawable/ic_email_black_24dp"
             android:hint="Enter email"/>
 
         <EditText
@@ -38,6 +39,7 @@
             android:layout_below="@+id/login_email_edit_text"
             android:layout_marginTop="40dp"
             android:inputType="textPassword"
+            android:drawableLeft="@drawable/ic_lock_outline_black_24dp"
             android:background="@drawable/reg_edittext_style"
             android:hint="Enter password"/>
 
