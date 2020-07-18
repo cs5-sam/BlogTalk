@@ -291,12 +291,10 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
             startActivity(i);
         }
         else if (id == R.id.nav_settings) {
-            getSupportActionBar().setTitle("Settings");
             Intent i = new Intent(Home.this,SettingsActivity.class);
             startActivity(i);
         }
         else if (id == R.id.nav_delete) {
-            getSupportActionBar().setTitle("Delete");
             Intent i = new Intent(Home.this,DeleteAccountActivity.class);
             startActivity(i);
         }
