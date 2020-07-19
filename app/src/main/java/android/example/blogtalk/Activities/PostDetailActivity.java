@@ -182,6 +182,5 @@ public class PostDetailActivity extends AppCompatActivity {
         calendar.setTimeInMillis(time);
         String date = DateFormat.format("yyyy-MM-dd",calendar).toString();
         return  date;
-       }
-        */
+       }*/
 }

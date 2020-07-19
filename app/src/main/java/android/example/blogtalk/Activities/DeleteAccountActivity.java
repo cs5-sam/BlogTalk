@@ -1,8 +1,10 @@
 package android.example.blogtalk.Activities;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.example.blogtalk.R;
 import android.os.Bundle;
@@ -62,7 +64,26 @@ public class DeleteAccountActivity extends AppCompatActivity {
                 else{
                     loadingBar.setVisibility(View.VISIBLE);
                     deleteBtn.setVisibility(View.INVISIBLE);
-                    deleteAccount();
+                    AlertDialog.Builder builder = new AlertDialog.Builder(DeleteAccountActivity.this);
+                    builder.setTitle("Are you sure ?").
+                            setMessage("Do you want to delete account ?")
+                            .setIcon(R.drawable.ic_info)
+                            .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    deleteAccount();
+                                }
+                            })
+                    .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            loadingBar.setVisibility(View.INVISIBLE);
+                            deleteBtn.setVisibility(View.VISIBLE);
+                        }
+                    });
+
+                    AlertDialog alert = builder.create();
+                    alert.show();
                 }
             }
         });
