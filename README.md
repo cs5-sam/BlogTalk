@@ -27,7 +27,7 @@ Using Android Studio and Firebase.
   <li>Android SDK tools</li>
   <li>Android 16 or newer</li>
 </ul>
-# Configure
+<strong>Configure</strong>
 <ul>
   <li>Firebase - google-services.json</li>
 </ul>
