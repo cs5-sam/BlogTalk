@@ -142,7 +142,7 @@ public class PostDetailActivity extends AppCompatActivity {
         // ID
         PostKey = getIntent().getExtras().getString("postKey");
         //String date = timeStampStringConvert(getIntent().getExtras().getLong("postDate"));
-        //textPostDate.setText(date);
+        //textPostDate.setText("By || "+user.getDisplayName());
 
         // Initialize RecyclerView
         iniRvComment();
