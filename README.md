@@ -38,3 +38,5 @@ Debug: ./app/src/debug/google-services.json
 
 Production: ./app/src/google-services.json
 
+# Download
+* Try the application.<a href="https://github.com/cs5-sam/BlogTalk/tree/master/app/release/app-release.apk" target="_blank" download>Download apk</a>
