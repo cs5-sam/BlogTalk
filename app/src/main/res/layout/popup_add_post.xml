@@ -16,23 +16,25 @@
     <EditText
         android:id="@+id/popup_title_edit_text"
         android:layout_width="310dp"
-        android:layout_alignParentLeft="true"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
         android:layout_centerHorizontal="true"
-        android:hint="Enter Title"
         android:background="@drawable/popup_editext_style"
-        android:inputType="textMultiLine"/>
+        android:fontFamily="@font/nunito"
+        android:hint="Enter Title"
+        android:inputType="textMultiLine" />
 
     <EditText
         android:id="@+id/popup_description_edit_text"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/popup_title_edit_text"
         android:layout_alignParentLeft="true"
-        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:hint="Enter Text"
         android:background="@drawable/popup_editext_style"
-        android:inputType="textMultiLine"/>
+        android:fontFamily="@font/nunito"
+        android:hint="Enter Text"
+        android:inputType="textMultiLine" />
 
     <ImageView
         android:background="#ffffff"

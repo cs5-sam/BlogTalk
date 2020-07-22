@@ -14,8 +14,9 @@
         android:id="@+id/chat_display_message_text"
         android:layout_width="270dp"
         android:layout_height="wrap_content"
+        android:background="@drawable/editext_button_style_rounded"
+        android:fontFamily="@font/nunito"
         android:text="Text"
-        android:textSize="18sp"
-        android:background="@drawable/editext_button_style_rounded"/>
+        android:textSize="18sp" />
 
 </LinearLayout>

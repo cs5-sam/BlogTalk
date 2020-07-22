@@ -23,71 +23,76 @@
             android:id="@+id/choose_image_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Choose Image"
-            android:textColor="#ffffff"
+            android:layout_below="@+id/register_user_image"
             android:layout_centerHorizontal="true"
-            android:layout_below="@+id/register_user_image"/>
+            android:fontFamily="@font/nunito"
+            android:text="Choose Image"
+            android:textColor="#ffffff" />
 
         <EditText
-        android:id="@+id/register_name_edit_text"
-        android:layout_width="265dp"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/choose_image_text"
-        android:layout_marginTop="30dp"
-        android:inputType="textPersonName"
-        android:background="@drawable/reg_edittext_style"
-        android:hint="Enter name"
-            android:drawableLeft="@drawable/ic_account_circle_black_24dp"
-            />
-
-        <EditText
+            android:id="@+id/register_name_edit_text"
+            android:layout_width="265dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/choose_image_text"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
             android:background="@drawable/reg_edittext_style"
+            android:drawableLeft="@drawable/ic_account_circle_black_24dp"
+            android:fontFamily="@font/nunito"
+            android:hint="Enter name"
+            android:inputType="textPersonName" />
+
+        <EditText
             android:id="@+id/register_email_edit_text"
             android:layout_width="265dp"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
             android:layout_below="@+id/register_name_edit_text"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
-            android:hint="Enter email"
+            android:background="@drawable/reg_edittext_style"
             android:drawableLeft="@drawable/ic_email_black_24dp"
-            android:inputType="textEmailAddress"/>
+            android:fontFamily="@font/nunito"
+            android:hint="Enter email"
+            android:inputType="textEmailAddress" />
 
         <EditText
-            android:background="@drawable/reg_edittext_style"
             android:id="@+id/register_password_edit_text"
             android:layout_width="265dp"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
             android:layout_below="@+id/register_email_edit_text"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
-            android:hint="Enter password"
+            android:background="@drawable/reg_edittext_style"
             android:drawableLeft="@drawable/ic_lock_outline_black_24dp"
-            android:inputType="textPassword"/>
+            android:fontFamily="@font/nunito"
+            android:hint="Enter password"
+            android:inputType="textPassword" />
 
         <EditText
-            android:background="@drawable/reg_edittext_style"
             android:id="@+id/register_confirm_password_edit_text"
             android:layout_width="265dp"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
             android:layout_below="@+id/register_password_edit_text"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
+            android:background="@drawable/reg_edittext_style"
             android:drawableLeft="@drawable/ic_lock_outline_black_24dp"
+            android:fontFamily="@font/nunito"
             android:hint="confirm password"
-            android:inputType="textPassword"/>
+            android:inputType="textPassword" />
 
         <Button
             android:id="@+id/register_btn"
             android:layout_width="160dp"
             android:layout_height="50dp"
             android:layout_below="@+id/register_confirm_password_edit_text"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/login"
+            android:fontFamily="@font/grenzegotisch"
             android:text="Register"
             android:textAllCaps="false"
-            android:background="@drawable/login"
-            android:textColor="#ffffff"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="40dp"/>
+            android:textColor="#ffffff" />
 
         <ProgressBar
             android:id="@+id/register_progressBar"
@@ -103,11 +108,12 @@
             android:id="@+id/login_here_text"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:text="Already registered ? Login here"
-            android:gravity="center"
-            android:textColor="#00C853"
-            android:layout_centerHorizontal="true"
             android:layout_below="@+id/register_btn"
-            android:layout_marginTop="15dp"/>
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/nunito"
+            android:gravity="center"
+            android:text="Already registered ? Login here"
+            android:textColor="#00C853" />
     </RelativeLayout>
 </ScrollView>
