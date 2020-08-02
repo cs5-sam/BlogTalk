@@ -16,7 +16,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,6 +30,7 @@ import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.rey.material.widget.CheckBox;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -45,6 +45,7 @@ public class RegisterActivity extends AppCompatActivity {
     private ProgressBar loadingBar;
     private Button registerBtn;
     private TextView loginTextActivity;
+    CheckBox termsCheckBox;
 
     private FirebaseAuth auth;
 
@@ -63,6 +64,7 @@ public class RegisterActivity extends AppCompatActivity {
         loadingBar = findViewById(R.id.register_progressBar);
         registerBtn = findViewById(R.id.register_btn);
         loginTextActivity = findViewById(R.id.login_here_text);
+        termsCheckBox = findViewById(R.id.terms_and_condition);
 
         auth = FirebaseAuth.getInstance();
 
@@ -89,6 +91,22 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
+        termsCheckBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showMessage("Long press to read");
+            }
+        });
+
+        termsCheckBox.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                Intent i = new Intent(RegisterActivity.this,TermsActivity.class);
+                startActivity(i);
+                return false;
+            }
+        });
+
         registerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -104,6 +122,11 @@ public class RegisterActivity extends AppCompatActivity {
 
                     // fields empty or incorrect;
                     showMessage("Please verify all fields, if not, add image");
+                    registerBtn.setVisibility(View.VISIBLE);
+                    loadingBar.setVisibility(View.INVISIBLE);
+                }
+                else if (!termsCheckBox.isChecked()){
+                    showMessage("Please read terms & conditions.");
                     registerBtn.setVisibility(View.VISIBLE);
                     loadingBar.setVisibility(View.INVISIBLE);
                 }

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.TermsActivity"
+    android:background="@color/colorPrimaryDark">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/terms_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Example title"
+            android:textColor="#00C853"
+            android:textSize="28sp"
+            android:padding="5dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/terms_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Example title"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_below="@+id/terms_title"
+            android:textColor="#fff"
+            android:textSize="20sp"
+            android:gravity="fill"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/privacy_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Example title"
+            android:textColor="#00C853"
+            android:textSize="28sp"
+            android:padding="5dp"
+            android:layout_below="@+id/terms_description"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/privacy_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Example title"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_below="@+id/privacy_title"
+            android:textColor="#fff"
+            android:textSize="20sp"
+            android:gravity="fill"
+            android:layout_marginTop="10dp"/>
+
+    </RelativeLayout>
+
+</ScrollView>

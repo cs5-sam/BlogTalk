@@ -16,4 +16,7 @@
 
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="terms_description">All content provided on this blog is for informational purposes only. The owner of this blog makes no representations as to the accuracy or completeness of any information on this site or found by following any link on this site. The owner will not be liable for any errors or omissions in this information nor for the availability of this information. The owner will not be liable for any losses, injuries, or damages from the display or use of this information. These terms and conditions of use are subject to change at any time and without notice.</string>
+    <string name="privacy_policy">We do not share personal information with third-parties. We are not responsible for the republishing of the content found on this blog on other websites or media without our permission. This privacy policy is subject to change without notice.</string>
+
 </resources>
