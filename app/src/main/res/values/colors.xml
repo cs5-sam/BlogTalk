@@ -9,4 +9,5 @@
     <color name="colorNeutral">#434343</color>
     <color name="colorError">#CC0000</color>
     <color name="colorTextPrimary">#212121</color>
+    <color name="transparent">#cccccc</color>
 </resources>
