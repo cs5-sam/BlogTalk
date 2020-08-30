@@ -1,14 +1,18 @@
 package android.example.blogtalk.Activities;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.example.blogtalk.Adapter.CommentAdapter;
 import android.example.blogtalk.Models.Comment;
 import android.example.blogtalk.R;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -146,7 +150,6 @@ public class PostDetailActivity extends AppCompatActivity {
 
         // Initialize RecyclerView
         iniRvComment();
-
     }
 
     private void iniRvComment() {

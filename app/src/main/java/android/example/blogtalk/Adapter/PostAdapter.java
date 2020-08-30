@@ -25,7 +25,6 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
     Context mContext;
     List<Post> mData ;
 
-
     public PostAdapter(Context mContext, List<Post> mData) {
         this.mContext = mContext;
         this.mData = mData;
@@ -64,7 +63,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
         ImageView imgPost;
         CircleImageView imgPostProfile;
 
-        public MyViewHolder(View itemView) {
+        public MyViewHolder(final View itemView) {
             super(itemView);
 
             tvTitle = itemView.findViewById(R.id.row_title_text);

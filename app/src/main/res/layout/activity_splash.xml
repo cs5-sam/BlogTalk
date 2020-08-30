@@ -13,7 +13,7 @@
         android:id="@+id/splash_image"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:src="@mipmap/logo"
+        android:src="@drawable/newicon"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="150dp"/>
 
