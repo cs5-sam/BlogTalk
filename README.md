@@ -12,6 +12,7 @@ Using Android Studio and Firebase.
   <li>Comment feature for all posts.</li>
   <li>Public chat feature, now chat everyone</li>
   <li>Image and name changing feature.</li>
+  <li>Forgot/Reset Password</li>
   <li>Delete Account</li>
 </ul>
 
