@@ -9,6 +9,7 @@ import androidx.core.content.ContextCompat;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.example.blogtalk.Fragments.ResetPasswordFragment;
 import android.example.blogtalk.R;
 import android.net.Uri;
 import android.os.Build;
@@ -41,7 +42,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class SettingsActivity extends AppCompatActivity {
 
     private EditText userNewName;
-    private Button changeBtn,deleteAccountBtn;
+    private Button changeBtn,resetPasswordBtnSettings;
     private CircleImageView userNewImage;
     private ProgressBar loadingBar;
 
@@ -64,6 +65,7 @@ public class SettingsActivity extends AppCompatActivity {
 
         changeBtn = findViewById(R.id.settings_change_btn);
         loadingBar = findViewById(R.id.settings_progressBar);
+        resetPasswordBtnSettings = findViewById(R.id.forgot_btn_settings);
 
 
         auth = FirebaseAuth.getInstance();
@@ -110,6 +112,17 @@ public class SettingsActivity extends AppCompatActivity {
                 else {
                     uploadData(name);
                 }
+            }
+        });
+
+        resetPasswordBtnSettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                Intent i =  new Intent(SettingsActivity.this,LoginActivity.class);
+                startActivity(i);
+//                getSupportFragmentManager().beginTransaction().add(android.R.id.content,new ResetPasswordFragment()).commit();
+                finish();
             }
         });
     }

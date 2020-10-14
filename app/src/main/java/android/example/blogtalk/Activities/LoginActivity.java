@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.example.blogtalk.Fragments.ResetPasswordFragment;
 import android.example.blogtalk.R;
 import android.os.Bundle;
 import android.view.View;
@@ -30,6 +31,8 @@ public class LoginActivity extends AppCompatActivity {
     private FirebaseAuth auth;
     private Intent HomeActivity;
     private TextView registerText;
+    private TextView forgotText;
+    private String code = "0";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +45,7 @@ public class LoginActivity extends AppCompatActivity {
         loginBtn = findViewById(R.id.login_btn);
         loadingBar = findViewById(R.id.login_progressBar);
         registerText = findViewById(R.id.register_here_text);
+        forgotText = findViewById(R.id.reset_password_text_login);
 
         auth = FirebaseAuth.getInstance();
         HomeActivity = new Intent(this, android.example.blogtalk.Activities.Home.class);
@@ -77,7 +81,17 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
+        forgotText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ResetMethod();
+            }
+        });
 
+    }
+
+    private void ResetMethod(){
+        getSupportFragmentManager().beginTransaction().add(android.R.id.content,new ResetPasswordFragment()).commit();
     }
 
     private void signIn(final String mail,final String password) {

@@ -83,10 +83,23 @@
             android:layout_marginLeft="16dp"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/nunito"
-            android:text="*Choosing image is mandatory"
+            android:text="*Picking image is mandatory"
             android:textColor="#ffffff"
             android:textSize="17sp"
             android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/forgot_btn_settings"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Reset Password"
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/shape_btn"
+            android:layout_below="@+id/notice_text"
+            android:elevation="3dp"/>
 
     </RelativeLayout>
 </ScrollView>

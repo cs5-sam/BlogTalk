@@ -79,6 +79,17 @@
             android:gravity="center"
             android:text="Not a user ? Register here"
             android:textColor="#00C853" />
+        <TextView
+            android:id="@+id/reset_password_text_login"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/register_here_text"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/nunito"
+            android:gravity="center"
+            android:text="Forgot Password?"
+            android:textColor="#00C853" />
 
     </RelativeLayout>
 </ScrollView>

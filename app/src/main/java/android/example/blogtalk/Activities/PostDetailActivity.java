@@ -95,23 +95,30 @@ public class PostDetailActivity extends AppCompatActivity {
                 addCommentBtn.setVisibility(View.INVISIBLE);
                 DatabaseReference commentReference = firebaseDatabase.getReference(COMMENT_KEY).child(PostKey).push();
                 String comment_content = commentEdit.getText().toString();
-                String uid = user.getUid();
-                String uname = user.getDisplayName();
-                String uimg = user.getPhotoUrl().toString();
-                Comment comment = new Comment(comment_content,uid,uimg,uname);
-                commentReference.setValue(comment).addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        showMessage("comment added");
-                        commentEdit.setText("");
-                        addCommentBtn.setVisibility(View.VISIBLE);
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        showMessage("Error occurred "+e.getMessage());
-                    }
-                });
+                if (comment_content.equals("")) {
+                    showMessage("Enter valid comment");
+                    addCommentBtn.setVisibility(View.VISIBLE);
+                } else {
+
+                    String uid = user.getUid();
+                    String uname = user.getDisplayName();
+                    String uimg = user.getPhotoUrl().toString();
+                    Comment comment = new Comment(comment_content, uid, uimg, uname);
+                    commentReference.setValue(comment).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            showMessage("comment added");
+                            commentEdit.setText("");
+                            addCommentBtn.setVisibility(View.VISIBLE);
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            showMessage("Error occurred " + e.getMessage());
+                            addCommentBtn.setVisibility(View.VISIBLE);
+                        }
+                    });
+                }
             }
         });
 
