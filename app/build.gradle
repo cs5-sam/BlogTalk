@@ -46,6 +46,7 @@ dependencies {
     implementation 'com.github.rey5137:material:1.2.5'
     // GLIDE
     implementation 'com.github.bumptech.glide:glide:4.11.0'
+    implementation 'com.google.firebase:firebase-messaging:20.2.4'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
     // TOOLBAR FONT
     implementation 'com.android.support:appcompat-v7:27.1.1'

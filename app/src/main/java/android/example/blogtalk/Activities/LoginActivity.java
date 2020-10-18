@@ -7,9 +7,11 @@ import android.content.Intent;
 import android.example.blogtalk.Fragments.ResetPasswordFragment;
 import android.example.blogtalk.R;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -20,6 +22,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.rey.material.widget.CheckBox;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -32,6 +35,7 @@ public class LoginActivity extends AppCompatActivity {
     private Intent HomeActivity;
     private TextView registerText;
     private TextView forgotText;
+    private CheckBox showPasswordChkBox;
     private String code = "0";
 
     @Override
@@ -46,11 +50,23 @@ public class LoginActivity extends AppCompatActivity {
         loadingBar = findViewById(R.id.login_progressBar);
         registerText = findViewById(R.id.register_here_text);
         forgotText = findViewById(R.id.reset_password_text_login);
+        showPasswordChkBox = findViewById(R.id.show_password);
 
         auth = FirebaseAuth.getInstance();
         HomeActivity = new Intent(this, android.example.blogtalk.Activities.Home.class);
 
         loadingBar.setVisibility(View.INVISIBLE);
+
+        showPasswordChkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    userPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                }else{
+                    userPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                }
+            }
+        });
 
         registerText.setOnClickListener(new View.OnClickListener() {
             @Override
