@@ -23,13 +23,15 @@ public class SplashActivity extends AppCompatActivity {
         splashText = findViewById(R.id.splash_text);
         Animation animation = AnimationUtils.loadAnimation(this,R.anim.myanimation);
         Animation transition = AnimationUtils.loadAnimation(this,R.anim.mytransition);
-        splashImage.startAnimation(animation);
-        splashText.startAnimation(animation);
+        Animation topAnim = AnimationUtils.loadAnimation(this,R.anim.top_animation);
+        Animation bottomAnim = AnimationUtils.loadAnimation(this,R.anim.bottom_animation);
+        splashImage.startAnimation(topAnim);
+        splashText.startAnimation(bottomAnim);
         final Intent i = new Intent(SplashActivity.this,LoginActivity.class);
         Thread timer = new Thread(){
             public void run() {
                 try{
-                    sleep(5000);
+                    sleep(3000);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
