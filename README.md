@@ -13,6 +13,8 @@ Microblogging android application using Android Studio and Firebase and typed in
   <li>Image and name changing feature.</li>
   <li>Forgot/Reset Password</li>
   <li>Delete Account</li>
+  <li>Cloud Messaging</li>
+  <li>In-App notifications</li>
 </ul>
 
 # To be Implemented
