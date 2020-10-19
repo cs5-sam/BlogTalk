@@ -1,6 +1,5 @@
 # BlogTalk
-Microblogging android application.
-Using Android Studio and Firebase.
+Microblogging android application using Android Studio and Firebase and typed in JAVA.
 
 # Features Implemented
 <ul>
