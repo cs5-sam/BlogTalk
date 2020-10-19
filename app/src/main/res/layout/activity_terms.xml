@@ -15,56 +15,60 @@
             android:id="@+id/terms_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:text="Example title"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/audiowide"
+            android:gravity="center"
+            android:padding="5dp"
             android:textColor="#00C853"
             android:textSize="28sp"
-            android:padding="5dp"
             android:textStyle="bold"
-            android:gravity="center"
-            android:layout_marginTop="10dp"/>
+            tools:text="Example title" />
 
         <TextView
             android:id="@+id/terms_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:text="Example title"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
             android:layout_below="@+id/terms_title"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/nunito"
+            android:gravity="fill"
+            android:paddingLeft="15dp"
+            android:paddingTop="10dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="10dp"
             android:textColor="#fff"
             android:textSize="20sp"
-            android:gravity="fill"
-            android:layout_marginTop="10dp"/>
+            tools:text="Example title" />
 
         <TextView
             android:id="@+id/privacy_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:text="Example title"
+            android:layout_below="@+id/terms_description"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/audiowide"
+            android:gravity="center"
+            android:padding="5dp"
             android:textColor="#00C853"
             android:textSize="28sp"
-            android:padding="5dp"
-            android:layout_below="@+id/terms_description"
             android:textStyle="bold"
-            android:gravity="center"
-            android:layout_marginTop="10dp"/>
+            tools:text="Example title" />
 
         <TextView
             android:id="@+id/privacy_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:text="Example title"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
             android:layout_below="@+id/privacy_title"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/nunito"
+            android:gravity="fill"
+            android:paddingLeft="15dp"
+            android:paddingTop="10dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="10dp"
             android:textColor="#fff"
             android:textSize="20sp"
-            android:gravity="fill"
-            android:layout_marginTop="10dp"/>
+            tools:text="Example title" />
 
     </RelativeLayout>
 

@@ -25,21 +25,25 @@
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:layout_margin="10dp"/>
+
         <EditText
             android:id="@+id/chat_message_edit_text"
             android:layout_width="240dp"
             android:layout_height="wrap_content"
+            android:background="@drawable/editext_button_style_rounded"
+            android:fontFamily="@font/nunito"
             android:hint="Enter message"
-            android:inputType="textMultiLine"
-            android:background="@drawable/editext_button_style_rounded"/>
+            android:inputType="textMultiLine" />
+
         <Button
             android:id="@+id/chat_send_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:background="@drawable/editext_button_style_rounded"
+            android:fontFamily="@font/nunito"
             android:text="send"
-            android:textAllCaps="false"/>
+            android:textAllCaps="false" />
 
     </LinearLayout>
 </RelativeLayout>

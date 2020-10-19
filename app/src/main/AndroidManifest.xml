@@ -28,14 +28,18 @@
             android:parentActivityName=".Activities.RegisterActivity" />
         <activity
             android:name=".Activities.PublicChatActivity"
-            android:label="Chat" />
+            android:label="Chat"
+            android:parentActivityName=".Activities.Home"/>
         <activity
             android:name=".Activities.DeleteAccountActivity"
-            android:label="Delete Account" />
+            android:label="Delete Account"
+            android:parentActivityName=".Activities.Home"/>
         <activity
             android:name=".Activities.SettingsActivity"
-            android:label="Settings" />
-        <activity android:name=".Activities.PostDetailActivity" />
+            android:label="Settings"
+            android:parentActivityName=".Activities.Home"/>
+        <activity android:name=".Activities.PostDetailActivity"
+            android:parentActivityName=".Activities.Home"/>
         <activity
             android:name=".Activities.Home"
             android:label="@string/title_activity_home"
@@ -49,6 +53,10 @@
         <activity
             android:name=".Activities.RegisterActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

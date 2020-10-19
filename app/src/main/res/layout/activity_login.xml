@@ -47,18 +47,19 @@
 
         <com.rey.material.widget.CheckBox
             android:id="@+id/show_password"
+            style="@style/Material.Drawable.CheckBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/Material.Drawable.CheckBox"
-            android:text="Show Password"
-            android:layout_centerHorizontal="true"
-            android:textColor="#ffffff"
             android:layout_below="@+id/login_password_edit_text"
-            app:cbd_strokeColor="#00C853"
-            android:gravity="center_vertical"
-            android:textSize="14sp"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
-            android:textStyle="bold"/>
+            android:fontFamily="@font/nunito"
+            android:gravity="center_vertical"
+            android:text="Show Password"
+            android:textColor="#ffffff"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:cbd_strokeColor="#00C853" />
 
         <Button
             android:id="@+id/login_btn"
@@ -68,7 +69,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="140dp"
             android:background="@drawable/login"
-            android:fontFamily="@font/grenzegotisch"
+            android:fontFamily="@font/audiowide"
             android:text="Login"
             android:textAllCaps="false"
             android:textColor="#ffffff" />

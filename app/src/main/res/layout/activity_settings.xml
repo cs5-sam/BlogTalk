@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
-            android:fontFamily="@font/nunito"
+            android:fontFamily="@font/audiowide"
             android:text="Change Details"
             android:textColor="#00C853"
             android:textSize="22sp"
@@ -61,7 +61,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="80dp"
             android:background="@drawable/login"
-            android:fontFamily="@font/grenzegotisch"
+            android:fontFamily="@font/audiowide"
             android:text="Change"
             android:textAllCaps="false"
             android:textColor="#ffffff" />
@@ -92,15 +92,16 @@
             android:id="@+id/forgot_btn_settings"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:text="Reset Password"
-            android:textAllCaps="false"
-            android:textColor="#fff"
+            android:layout_below="@+id/notice_text"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
             android:background="@drawable/shape_btn"
-            android:layout_below="@+id/notice_text"
             android:elevation="3dp"
-            android:visibility="invisible"/>
+            android:fontFamily="@font/audiowide"
+            android:text="Reset Password"
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            android:visibility="invisible" />
 
     </RelativeLayout>
 </ScrollView>

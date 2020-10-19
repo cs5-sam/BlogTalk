@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
-            android:fontFamily="@font/nunito"
+            android:fontFamily="@font/audiowide"
             android:text="Delete Account"
             android:textColor="#00C853"
             android:textSize="22sp"
@@ -70,7 +70,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="40dp"
             android:background="@drawable/warning_btn_design"
-            android:fontFamily="@font/grenzegotisch"
+            android:fontFamily="@font/audiowide"
             android:text="Delete Account"
             android:textColor="#ffffff" />
         <ProgressBar
