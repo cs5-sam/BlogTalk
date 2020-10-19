@@ -10,6 +10,10 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+
 public class SplashActivity extends AppCompatActivity {
 
     private ImageView splashImage;
@@ -27,6 +31,11 @@ public class SplashActivity extends AppCompatActivity {
         Animation bottomAnim = AnimationUtils.loadAnimation(this,R.anim.bottom_animation);
         splashImage.startAnimation(topAnim);
         splashText.startAnimation(bottomAnim);
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
         final Intent i = new Intent(SplashActivity.this,LoginActivity.class);
         Thread timer = new Thread(){
             public void run() {

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     tools:context=".Activities.PostDetailActivity"
     android:background="#ffffff">
 
@@ -83,11 +83,21 @@
             android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
             android:textColor="#373737" />
 
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/ad_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/post_description_detail"
+            ads:adSize="BANNER"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            ads:adUnitId="@string/banner_ad_unit_id"/>
+
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/post_comment_image"
             android:layout_width="36dp"
             android:layout_height="36dp"
-            android:layout_below="@+id/post_description_detail"
+            android:layout_below="@+id/ad_view"
             android:layout_marginTop="28dp"
             android:layout_marginLeft="28dp"/>
 
@@ -95,7 +105,7 @@
             android:id="@+id/post_comment_edit_text"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/post_description_detail"
+            android:layout_below="@+id/ad_view"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="23dp"
             android:layout_toRightOf="@+id/post_comment_image"
@@ -108,7 +118,7 @@
             android:id="@+id/post_submit_comment_btn"
             android:layout_width="55dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/post_description_detail"
+            android:layout_below="@+id/ad_view"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="22dp"
             android:layout_toRightOf="@+id/post_comment_edit_text"
@@ -123,6 +133,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/post_comment_edit_text"/>
+
+
 
     </RelativeLayout>
 </androidx.core.widget.NestedScrollView>

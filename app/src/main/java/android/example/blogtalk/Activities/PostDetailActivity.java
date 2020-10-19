@@ -23,6 +23,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -45,12 +50,13 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class PostDetailActivity extends AppCompatActivity {
 
-    ImageView postImage;
-    CircleImageView commentImage,postUserImage;
-    TextView textPostDesc, textPostDate, textPostTitle;
-    EditText commentEdit;
-    Button addCommentBtn;
-    String PostKey;
+    private ImageView postImage;
+    private CircleImageView commentImage,postUserImage;
+    private TextView textPostDesc, textPostDate, textPostTitle;
+    private EditText commentEdit;
+    private Button addCommentBtn;
+    private String PostKey;
+    private AdView adView;
 
     FirebaseAuth auth;
     FirebaseUser user;
@@ -82,10 +88,21 @@ public class PostDetailActivity extends AppCompatActivity {
 
         commentEdit = findViewById(R.id.post_comment_edit_text);
         addCommentBtn = findViewById(R.id.post_submit_comment_btn);
+        adView = findViewById(R.id.ad_view);
 
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
         firebaseDatabase = FirebaseDatabase.getInstance();
+
+        // AD REQUEST
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+        AdRequest adRequest = new AdRequest.Builder()
+                .build();
+        adView.loadAd(adRequest);
 
         // add Comment button click listener
         addCommentBtn.setOnClickListener(new View.OnClickListener() {
